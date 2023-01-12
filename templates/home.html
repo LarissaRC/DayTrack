@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DayTrack App</title>
+        <!--
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="../static/css/main.css">
+        -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div id="cell_size">
+            <div class="header">
+                <div id="menu_hamburger">
+                    <img class="hamburger" src="../static/images/menu.png">
+                </div>
+                <input class="search_event" type="text" value="Título do evento">
+                <img class="search" src="../static/images/search.png">
+            </div>
+            <div class="content">
+                {% for evento in eventos %}
+                <div class="event">
+                    <p class="event_desc">{{ evento[1] }}</p>
+                    <div class="event_date">
+                        <p class="event_week_day">QUA</p>
+                        <p class="event_month_day">{{ evento[5] }}/{{ evento[4] }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="footer">
+                <img class="add_event" src="../static/images/add.png">
+            </div>
+        </div>
+    </body>
+</html>

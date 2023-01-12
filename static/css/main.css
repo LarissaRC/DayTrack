@@ -1,0 +1,289 @@
+/* ----------------------- Home --------------------------- */
+
+body {
+    background-color: rgb(53, 53, 53);
+    text-align: center;
+    font-family: "Arial";
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#cell_size {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 415px;
+    height: 736px;
+    text-align: center;
+}
+
+#logo {
+    margin: 125px 0px 26px 0px;
+    font-size: 36px;
+}
+
+#logo_login {
+    margin: 142px 0px 26px 0px;
+    font-size: 36px;
+}
+
+.fake_image {
+    background-color: rgb(214, 214, 214);
+    border: 2px solid black;
+    width: 330px;
+    height: 184px;
+    margin: auto;
+    margin-bottom: 47px;
+}
+
+.description {
+    width: 221px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    margin: 0px auto 20px auto;
+}
+
+.black_btn {
+    border: none;
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    width: 230px;
+    height: 44px;
+    margin-top: 50px;
+}
+
+/* ----------------------- Login --------------------------- */
+
+#login_div {
+    text-align: center;
+    margin: 0px 100px;
+}
+
+.login_label {
+    text-align: left;
+    margin-right: 100%;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.login_input {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 230px;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.submit_btn_black {
+    border: none;
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    width: 230px;
+    height: 44px;
+    margin-top: 50px;
+
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#criar_conta_link {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+}
+
+#criar_conta_link a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ----------------------- Logup --------------------------- */
+
+.fake_perfil_image {
+    background-color: rgb(214, 214, 214);
+    border: 2px solid black;
+    width: 115px;
+    height: 115px;
+    margin: auto;
+    margin-top: 42px;
+}
+
+.btn_add_image {
+    border: none;
+    background-color: #282828;
+    color: white;
+    font-size: 15px;
+    line-height: 18px;
+    width: 160px;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+#logup_div {
+    text-align: center;
+    margin: 0px 85px;
+}
+
+.logup_div_input {
+    display: inline;
+}
+
+.logup_label {
+    text-align: left;
+    margin-right: 100%;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.logup_input {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 230px;
+    height: 25px;
+    margin: 10px 0px;
+}
+
+.logup_input_date {
+    margin: 10px 0px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 230px;
+    height: 30px;
+    padding: 3px;
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.two_btns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.two_btns a {
+    text-decoration: none;
+}
+
+.two_btns_white {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    height: 48px;
+    width: 140px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.two_btns_white p {
+    padding: 0px;
+    text-decoration: none;
+}
+
+.two_btns_black {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border: none;
+    height: 50px;
+    width: 140px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* ----------------------- Home --------------------------- */
+
+.header {
+    width: 100%;
+    padding: 15px 0px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hamburger {
+    height: 25px;
+    padding-left: 30px;
+}
+
+.search {
+    height: 20px;
+    padding-right: 30px;
+}
+
+.search_event {
+    border: 1px solid black;
+    height: 25px;
+    width: 240px;
+    border-radius: 10px;
+}
+
+.content {
+    width: 100%;
+    height: 82%;
+}
+
+.event {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 25px;
+    height: 70px;
+}
+
+.event_desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 10px;
+    margin: auto 0px;
+}
+
+.event_date {
+    background-color: black;
+    color: white;
+    width: 20%;
+    height: 100%;
+}
+
+.event_week_day {
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+.event_month_day {
+    font-size: 14px;
+    margin: 0px;
+}
+
+.footer {
+    width: 100%;
+    height: 10%;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.add_event {
+    margin: auto 0px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DayTrack App</title>
+        <!--
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="../static/css/main.css">
+        -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div id="cell_size">
+            <h1 id="logo">DayTrack</h1>
+            <div class="fake_image"></div>
+            <h3 class="description">Sempre de olho nos seus compromissos!</h3>
+            <a href="{{ url_for('login') }}">
+                <button class="black_btn">ENTRAR</button>
+            </a>
+            <br/>
+            <a href="{{ url_for('logup') }}">
+                <button class="black_btn">CRIAR CONTA</button>
+            </a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DayTrack App</title>
+        <!--
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="../static/css/main.css">
+        -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div id="cell_size">
+            <div class="fake_perfil_image"></div>
+            <button class="btn_add_image">Selecionar uma imagem de perfil</button>
+
+            <div>
+                <form id="logup_div">
+                    <div class="logup_div_input">
+                        <label class="logup_label" for="logup_name">Nome:</label>
+                        <input class="logup_input" type="text" id="logup_name" name="fname">
+                    </div>
+                    <div class="logup_div_input">
+                        <label class="logup_label" for="logup_email">Email:</label>
+                        <input class="logup_input" type="email" id="logup_email" name="fname">
+                    </div>
+                    <div class="logup_div_input">
+                        <label class="logup_label" for="logup_password">Senha:</label>
+                        <input class="logup_input" type="password" id="logup_password" name="lname">
+                    </div>
+                    <div class="logup_div_input">
+                        <label class="logup_label" for="logup_password_repeat">Repita:</label>
+                        <input class="logup_input" type="password" id="logup_password_repeat" name="lname">
+                    </div>
+                    <div class="logup_div_input">
+                        <label class="logup_label" for="logup_birthday">Nascimento:</label>
+                        <input class="logup_input_date" type="date" id="logup_birthday" name="lname">
+                    </div>
+                    <div class="two_btns">
+                        <a href="{{ url_for('index') }}">
+                            <div class="two_btns_white"><p>CANCELAR</p></div>
+                        </a>
+                        <input class="two_btns_black" type="submit" value="CRIAR">
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>
