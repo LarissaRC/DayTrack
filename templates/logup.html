@@ -15,26 +15,22 @@
             <button class="btn_add_image">Selecionar uma imagem de perfil</button>
 
             <div>
-                <form id="logup_div">
+                <form id="logup_div" method="POST">
                     <div class="logup_div_input">
                         <label class="logup_label" for="logup_name">Nome:</label>
-                        <input class="logup_input" type="text" id="logup_name" name="fname">
+                        <input class="logup_input" type="text" id="logup_name" name="user_name">
                     </div>
                     <div class="logup_div_input">
                         <label class="logup_label" for="logup_email">Email:</label>
-                        <input class="logup_input" type="email" id="logup_email" name="fname">
+                        <input class="logup_input" type="email" id="logup_email" name="user_email">
                     </div>
                     <div class="logup_div_input">
                         <label class="logup_label" for="logup_password">Senha:</label>
-                        <input class="logup_input" type="password" id="logup_password" name="lname">
+                        <input class="logup_input" type="password" id="logup_password" name="user_password">
                     </div>
                     <div class="logup_div_input">
                         <label class="logup_label" for="logup_password_repeat">Repita:</label>
                         <input class="logup_input" type="password" id="logup_password_repeat" name="lname">
-                    </div>
-                    <div class="logup_div_input">
-                        <label class="logup_label" for="logup_birthday">Nascimento:</label>
-                        <input class="logup_input_date" type="date" id="logup_birthday" name="lname">
                     </div>
                     <div class="two_btns">
                         <a href="{{ url_for('index') }}">
