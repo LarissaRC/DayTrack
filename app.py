@@ -36,7 +36,7 @@ def logup():
         if(user_id):
             session["user_id"] = user_id
             session.modified = True
-            return redirect(url_for("home"))
+            return redirect(url_for("login"))
     else:
         return render_template("logup.html")
 
