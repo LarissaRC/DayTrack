@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>DayTrack App</title>
-        <!--
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        <link rel="stylesheet" href="../static/css/main.css">
-        -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    </head>
-    <body>
-        <div id="cell_size">
-            <div class="header">
-                <div id="menu_hamburger">
-                    <img class="hamburger" src="../static/images/menu.png">
-                </div>
-                <input class="search_event" type="text" value="Título do evento">
-                <img class="search" src="../static/images/search.png">
-            </div>
-            <div class="content">
-                {% for evento in eventos %}
-                <div class="event">
-                    <p class="event_desc">{{ evento[1] }}</p>
-                    <div class="event_date">
-                        <p class="event_week_day">QUA</p>
-                        <p class="event_month_day">{{ evento[5] }}/{{ evento[4] }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="footer">
-                <img class="add_event" src="../static/images/add.png">
-            </div>
-        </div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RP Flask REST API</title>
+</head>
+<body>
+    <h1>
+        DayTrack!
+    </h1>
+
+    {% for user in user %}
+    <h3>{{user["user_name"]}} {{user["user_email"]}} - {% if user["user_status"] == "0" %}<strong style="color: green;">Logado</strong>{% else %}<strong style="color: crimson;">Deslogado</strong>{% endif %}</h3>
+    <ul>
+        {% for event in event %}
+            {% if event["user_id"] == user["user_id"] %}
+                <li><strong>{{event["event_name"]}}</strong> - {{event["event_description"]}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+</body>
 </html>

@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: "Agenda Flask REST API"
+  description: "An API about an agenda with events"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+components:
+  schemas:
+    AgendaUser:
+      type: "object"
+      required:
+        - user_id
+      properties:
+        user_id:
+          type: "string"
+        user_name:
+          type: "string"
+        user_email:
+          type: "string"
+        user_password:
+          type: "string"
+        user_status:
+          type: "string"
+    AgendaEvent:
+      type: "object"
+      required:
+        - event_id
+      properties:
+        event_id:
+          type: "string"
+        user_id:
+          type: "string"
+        event_name:
+          type: "string"
+        event_name:
+          type: "string"
+        event_description:
+          type: "string"
+        event_date:
+          type: "string"
+  parameters:
+    user_id:
+      name: "user_id"
+      description: "ID of the user to get"
+      in: path
+      required: True
+      schema:
+        type: "string"
+    event_id:
+      name: "event_id"
+      description: "ID of the event of a user"
+      in: path
+      required: True
+      schema:
+        type: "string"
+
+paths:
+  /user:
+    get:
+      operationId: "agenda_user.read_all"
+      tags:
+        - "User"
+      summary: "Read the list of users"
+      responses:
+        "200":
+          description: "Successfully read user list"
+    post:
+      operationId: "agenda_user.create"
+      tags:
+        - User
+      summary: "Create a user"
+      requestBody:
+          description: "User to create"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "user"
+                $ref: "#/components/schemas/AgendaUser"
+      responses:
+        "201":
+          description: "Successfully created user"
+  /user/{user_id}:
+    get:
+      operationId: "agenda_user.read_one"
+      tags:
+        - User
+      summary: "Read one user"
+      parameters:
+        - $ref: "#/components/parameters/user_id"
+      responses:
+        "200":
+          description: "Successfully read user"
+    put:
+      tags:
+        - User
+      operationId: "agenda_user.update"
+      summary: "Update a user"
+      parameters:
+        - $ref: "#/components/parameters/user_id"
+      responses:
+        "200":
+          description: "Successfully updated user"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "user"
+              $ref: "#/components/schemas/AgendaUser"
+    delete:
+      tags:
+        - User
+      operationId: "agenda_user.delete"
+      summary: "Delete a user"
+      parameters:
+        - $ref: "#/components/parameters/user_id"
+      responses:
+        "204":
+          description: "Successfully deleted user"
+  
+  /event:
+    get:
+      operationId: "agenda_event.read_all"
+      tags:
+        - "Event"
+      summary: "Read the list of events"
+      responses:
+        "200":
+          description: "Successfully read event list"
+    post:
+      operationId: "agenda_event.create"
+      tags:
+        - Event
+      summary: "Create a event"
+      requestBody:
+          description: "Event to create"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "event"
+                $ref: "#/components/schemas/AgendaEvent"
+      responses:
+        "201":
+          description: "Successfully created event"
+  /event/{event_id}:
+    get:
+      operationId: "agenda_event.read_one"
+      tags:
+        - Event
+      summary: "Read one event"
+      parameters:
+        - $ref: "#/components/parameters/event_id"
+      responses:
+        "200":
+          description: "Successfully read event"
+    put:
+      tags:
+        - Event
+      operationId: "agenda_event.update"
+      summary: "Update a event"
+      parameters:
+        - $ref: "#/components/parameters/event_id"
+      responses:
+        "200":
+          description: "Successfully updated event"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "event"
+              $ref: "#/components/schemas/AgendaEvent"
+    delete:
+      tags:
+        - Event
+      operationId: "agenda_event.delete"
+      summary: "Delete a event"
+      parameters:
+        - $ref: "#/components/parameters/event_id"
+      responses:
+        "204":
+          description: "Successfully deleted event"
