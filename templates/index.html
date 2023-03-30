@@ -12,8 +12,12 @@
     </h1>
 
     <div class="row">
-        <button style="width: 120px; margin-left: 30px;" type="button" class="btn btn-dark">LOGIN</button>
-        <button style="width: 120px; margin-left: 30px;" type="button" class="btn btn-dark">CADASTRO</button>
+        <a href="{{ url_for('login') }}" style="width: 120px; margin-left: 30px;">
+        <button style="width: 120px;" type="button" class="btn btn-dark">LOGIN</button>
+        </a>
+        <a href="{{ url_for('logup') }}" style="width: 120px; margin-left: 30px;">
+        <button style="width: 120px;" type="button" class="btn btn-dark">CADASTRO</button>
+        </a>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>

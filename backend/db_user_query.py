@@ -1,5 +1,29 @@
 import mysql.connector
-from db_connect import get_connection
+from mysql.connector import Error
+
+config = {
+  'user': 'MPS',
+  'password': '#LClc03092002',
+  'host': 'localhost',
+  'database': 'mps_db',
+  'raise_on_warnings': True
+}
+
+def get_connection():
+    try:
+        connection = mysql.connector.connect(**config)
+        if connection.is_connected():
+            db_Info = connection.get_server_info()
+            print("Connected to MySQL Server version ", db_Info)
+            cursor = connection.cursor()
+            cursor.execute("select database();")
+            record = cursor.fetchone()
+            print("You're connected to database: ", record)
+            return connection
+
+    except Error as e:
+        print("Error while connecting to MySQL", e)
+        return False
 
 def add_user(data):
     cnx = get_connection()
@@ -48,6 +72,8 @@ def verify_user_email(data):
         cursor.close()
         cnx.close()
 
+        return user_id
+
 #verify_user_email(("lala@gmail.com"))
 
 def verify_user_password(id, password):
@@ -73,6 +99,29 @@ def verify_user_password(id, password):
 
         cursor.close()
         cnx.close()
+
+        return user_name
+
+def get_user_name(id):
+    cnx = get_connection()
+
+    if(get_connection != False):
+        cursor = cnx.cursor()
+
+        query = ("SELECT user_name FROM agenda_user WHERE  user_id = {}".format(id))
+
+        cursor.execute(query)
+        
+        user_name = None
+        for name in cursor:
+            user_name = name[0]
+
+        cnx.commit()
+
+        cursor.close()
+        cnx.close()
+
+        return user_name
 
 #verify_user_password(1, "111111")
 
@@ -110,13 +159,12 @@ def get_user_events(id, showAllEvents):
         
         if len(events) == 0:
             print("Usuário não possui eventos!")
-        else:
-            for event in events:
-                print(event)
+        
+        return events
 
         cnx.commit()
 
         cursor.close()
         cnx.close()
 
-get_user_events(1, True)
+#get_user_events(1, True)
